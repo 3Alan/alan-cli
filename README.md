@@ -1,0 +1,3 @@
+- chalk 改变颜色
+- commander 处理命令
+- Inquirer 提供交互
