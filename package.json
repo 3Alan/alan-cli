@@ -4,7 +4,7 @@
   "description": "a react cli",
   "main": "index.js",
   "bin": {
-    "alan-cli": "./bin/mycli.js"
+    "alan-cli": "./bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^9.0.0",
+    "fs-extra": "^10.0.1",
     "inquirer": "^8.2.0"
   }
 }

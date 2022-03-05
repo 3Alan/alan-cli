@@ -1,18 +1,24 @@
 #!/usr/bin/env node
-// TODO: 上面这段代码的含义
+// https://stackoverflow.com/questions/33509816/what-exactly-does-usr-bin-env-node-do-at-the-beginning-of-node-files
 
 const program = require('commander');
 const chalk = require('chalk');
 const questions = require('./questions');
 const inquirer = require('inquirer');
+const fse = require('fs-extra');
+const path = require('path');
 
 program
   .command('create')
   .description('create a project ')
   .action(function () {
-    chalk.blue('🎉🎉🎉');
     inquirer.prompt(questions).then(answer => {
-      console.log('answer=', answer);
+      const templateType = answer.type;
+      console.log('answer=', answer, __dirname);
+      fse
+        .copy(path.resolve(__dirname, `../template/${templateType}`), process.cwd())
+        .then(() => console.log(chalk.blue('complete')))
+        .catch(err => console.error(err));
     });
   });
 

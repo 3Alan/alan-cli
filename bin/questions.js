@@ -12,7 +12,7 @@ module.exports = [
   {
     type: 'list',
     message: 'select a tool',
-    name: 'tool',
+    name: 'type',
     choices: ['webpack', 'vite'],
     filter: function (val) {
       return val.toLowerCase();
