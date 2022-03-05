@@ -1,5 +1,5 @@
 {
-  "name": "alan-cli",
+  "name": "@3alan/cli",
   "version": "0.0.1",
   "description": "a react cli",
   "main": "index.js",
